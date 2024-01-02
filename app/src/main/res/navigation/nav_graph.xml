@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.balckliquid.blackliquid.HomeFragment"
+        android:label="Shop"
+        tools:layout="@layout/fragment_homr">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_cashInFragment"
+            app:destination="@id/cashInFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_cashOutFragment"
+            app:destination="@id/cashOutFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_debtsFragment"
+            app:destination="@id/debtsFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_lossesFragment"
+            app:destination="@id/lossesFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_paybillsFragment"
+            app:destination="@id/paybillsFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_productsFragment"
+            app:destination="@id/productsFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_profitLossFragment"
+            app:destination="@id/profitLossFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.balckliquid.blackliquid.SellFragment"
+        android:label="Sale"
+        tools:layout="@layout/fragment_sell">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.balckliquid.blackliquid.AddProductFragment"
+        android:label="add product"
+        tools:layout="@layout/fragment_add_product" >
+        <action
+            android:id="@+id/action_addProductFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cashInFragment"
+        android:name="com.balckliquid.blackliquid.CashInFragment"
+        android:label="Cash In"
+        tools:layout="@layout/fragment_cash_in" >
+        <action
+            android:id="@+id/action_cashInFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cashOutFragment"
+        android:name="com.balckliquid.blackliquid.CashOutFragment"
+        android:label="Cash Out"
+        tools:layout="@layout/fragment_cash_out" >
+        <action
+            android:id="@+id/action_cashOutFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/debtsFragment"
+        android:name="com.balckliquid.blackliquid.DebtsFragment"
+        android:label="debts"
+        tools:layout="@layout/fragment_debts" >
+        <action
+            android:id="@+id/action_debtsFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_debtsFragment_to_FirstFragment2"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_debtsFragment_to_FirstFragment3"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_debtsFragment_to_FirstFragment4"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lossesFragment"
+        android:name="com.balckliquid.blackliquid.LossesFragment"
+        android:label="Loss"
+        tools:layout="@layout/fragment_losses" >
+        <action
+            android:id="@+id/action_lossesFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/paybillsFragment"
+        android:name="com.balckliquid.blackliquid.PaybillsFragment"
+        android:label="paybills"
+        tools:layout="@layout/fragment_paybills" >
+        <action
+            android:id="@+id/action_paybillsFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="com.balckliquid.blackliquid.ProductsFragment"
+        android:label="products"
+        tools:layout="@layout/fragment_products" >
+        <action
+            android:id="@+id/action_productsFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profitLossFragment"
+        android:name="com.balckliquid.blackliquid.ProfitLossFragment"
+        android:label="profit and loss"
+        tools:layout="@layout/fragment_profit_loss" >
+        <action
+            android:id="@+id/action_profitLossFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+</navigation>
