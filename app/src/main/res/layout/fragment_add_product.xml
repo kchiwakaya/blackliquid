@@ -8,7 +8,7 @@
     tools:context=".AddProductFragment">
 
     <EditText
-        android:id="@+id/editProduct"
+        android:id="@+id/editLsProduct"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editDescription"
+        android:id="@+id/editLsDescription"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -33,10 +33,10 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editProduct" />
+        app:layout_constraintTop_toBottomOf="@+id/editLsProduct" />
 
     <EditText
-        android:id="@+id/editPPrice"
+        android:id="@+id/editLsPPrice"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -47,10 +47,10 @@
         android:inputType="number|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/editLsDescription" />
 
     <EditText
-        android:id="@+id/editPQuantity"
+        android:id="@+id/editLsQuantity"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -61,10 +61,10 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/editLsPPrice" />
 
     <EditText
-        android:id="@+id/editDate"
+        android:id="@+id/editLsDate"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -75,10 +75,10 @@
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPQuantity" />
+        app:layout_constraintTop_toBottomOf="@+id/editLsQuantity" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLsSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -87,5 +87,5 @@
         android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDate" />
+        app:layout_constraintTop_toBottomOf="@+id/editLsDate" />
 </androidx.constraintlayout.widget.ConstraintLayout>
