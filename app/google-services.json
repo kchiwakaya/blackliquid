@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "967252844439",
+    "project_id": "shoptracker-fc62f",
+    "storage_bucket": "shoptracker-fc62f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967252844439:android:856a6ea2993d63fc972ed2",
+        "android_client_info": {
+          "package_name": "com.balckliquid.blackliquid"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqroSEggO7QhrGvf42YwFJ9eZQmG8KrMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967252844439:android:8b877432edcb1128972ed2",
+        "android_client_info": {
+          "package_name": "com.technologyedge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqroSEggO7QhrGvf42YwFJ9eZQmG8KrMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
