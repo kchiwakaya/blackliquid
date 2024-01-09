@@ -8,7 +8,7 @@
     tools:context=".CashOutFragment">
 
     <EditText
-        android:id="@+id/editAmountOut"
+        android:id="@+id/editAmountIn"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editReasonOut"
+        android:id="@+id/editReasonIn"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -33,10 +33,10 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editAmountOut" />
+        app:layout_constraintTop_toBottomOf="@+id/editAmountIn" />
 
     <EditText
-        android:id="@+id/editPerson"
+        android:id="@+id/editPersonIn"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -46,10 +46,10 @@
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editReasonOut" />
+        app:layout_constraintTop_toBottomOf="@+id/editReasonIn" />
 
     <EditText
-        android:id="@+id/editOutDate"
+        android:id="@+id/editInDate"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -60,10 +60,10 @@
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPerson" />
+        app:layout_constraintTop_toBottomOf="@+id/editPersonIn" />
 
     <Button
-        android:id="@+id/btnSaveOut"
+        android:id="@+id/btnSaveIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -72,5 +72,5 @@
         android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editOutDate" />
+        app:layout_constraintTop_toBottomOf="@+id/editInDate" />
 </androidx.constraintlayout.widget.ConstraintLayout>
