@@ -1,13 +1,12 @@
 package com.balckliquid.blackliquid.models
 
-import java.sql.Date
 import java.time.LocalDateTime
 
 data class Product(
     val name:String,
     val description:String? = null,
     val purchase_price: Double,
-    val date_of_purchase:Date,
+    val date_of_purchase: java.util.Date,
     val quantity: Int
 
 )
