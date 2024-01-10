@@ -1,21 +1,21 @@
 package com.balckliquid.blackliquid.models
 
 import java.sql.Date
-import java.time.temporal.TemporalAmount
+import java.time.LocalDateTime
 
 data class Product(
     val name:String,
     val description:String? = null,
     val purchase_price: Double,
     val date_of_purchase:Date,
-    val quantity: Double
+    val quantity: Int
 
 )
 data class Sale(
     val product: Product,
     val unit_price:  Double,
     val quantity: Double,
-    val sale_date: Date,
+    val sale_date: LocalDateTime,
     val payment_method: String
 )
 
