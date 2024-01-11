@@ -1,9 +1,21 @@
 package com.balckliquid.blackliquid.models
 
 import java.time.LocalDateTime
+import java.util.UUID
+
+data class Shop(
+    val name:String,
+    val location:String,
+    val products:Product
+)
+data class Util(
+    val product_name: String,
+    val product_id:String = UUID.randomUUID().toString()
+)
 
 data class Product(
     val name:String,
+    val id:String,
     val description:String? = null,
     val purchase_price: Double,
     val date_of_purchase: java.util.Date,

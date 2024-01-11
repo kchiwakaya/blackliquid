@@ -59,6 +59,9 @@ class HomeFragment : Fragment() {
         binding.btnLosses.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_lossesFragment)
         }
+        binding.btnProduct.setOnClickListener {
+            findNavController().navigate(R.id.action_FirstFragment_to_productFragment)
+        }
     }
 
     override fun onDestroyView() {
