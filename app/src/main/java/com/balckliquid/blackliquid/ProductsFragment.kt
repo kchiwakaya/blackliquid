@@ -5,6 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.balckliquid.blackliquid.models.Product
+import com.balckliquid.blackliquid.models.Util
+import com.balckliquid.blackliquid.views.ProductAdapter
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,9 +38,11 @@ class ProductsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_products, container, false)
     }
+
 
     companion object {
         /**

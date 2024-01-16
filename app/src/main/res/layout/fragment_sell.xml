@@ -12,7 +12,7 @@
         android:padding="16dp">
 
         <EditText
-            android:id="@+id/editPrice"
+            android:id="@+id/editProd_Name"
             android:layout_width="0dp"
             android:layout_height="73dp"
             android:layout_marginStart="16dp"
@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editQuantity"
+            android:id="@+id/editPrice"
             android:layout_width="0dp"
             android:layout_height="73dp"
             android:layout_marginStart="16dp"
@@ -36,10 +36,10 @@
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/editProd_Name" />
 
         <EditText
-            android:id="@+id/editPrices"
+            android:id="@+id/editQuntity"
             android:layout_width="0dp"
             android:layout_height="75dp"
             android:layout_marginStart="16dp"
@@ -48,8 +48,9 @@
             android:hint="Quantity"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editQuantity" />
+            app:layout_constraintTop_toBottomOf="@+id/editPrice" />
 
         <ListView
             android:id="@+id/lst_payment_options"
@@ -61,7 +62,7 @@
             android:entries="@android:array/emailAddressTypes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editPrices" />
+            app:layout_constraintTop_toBottomOf="@+id/editQuntity" />
 
         <Button
             android:id="@+id/btnSale"

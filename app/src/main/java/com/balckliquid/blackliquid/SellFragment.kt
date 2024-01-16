@@ -45,9 +45,10 @@ class SellFragment : Fragment() {
 
 
        binding.btnSale.setOnClickListener {
-           val product = Product("Super","Chibuku",34.40, Date(12/12/2023) ,3)
+           val product = Product(binding.editProdName.text.toString(),"232","Chibuku",34.40,
+               Date(12/12/2023) ,3)
            val price: Double = (binding.editPrice.text.toString()).toDouble()
-          val sale = Sale(product,price,(binding.editQuantity.text.toString()).toDouble(), LocalDateTime.now(),"Chikwereti")
+          val sale = Sale(product,price,(binding.editQuntity.text.toString()).toDouble(), LocalDateTime.now(),"Chikwereti")
            db.collection("sales")
                .add(sale)
                .addOnSuccessListener { documentReference ->

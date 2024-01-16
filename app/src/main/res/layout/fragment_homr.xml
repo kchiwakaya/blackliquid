@@ -15,7 +15,7 @@
             android:id="@+id/btnSell"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="8dp"
             android:text="@string/sell"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +121,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:backgroundTint="#2D83C8"
-            android:text="Record Products"
+            android:text="Capture Products"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnLosses" />

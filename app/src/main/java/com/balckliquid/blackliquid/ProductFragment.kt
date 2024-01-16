@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.balckliquid.blackliquid.models.Util
+import com.balckliquid.blackliquid.views.ProductAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +40,23 @@ class ProductFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_product, container, false)
     }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        var recyclerView = view.findViewById<RecyclerView>(R.id.prorecyclerview)
+        val product = Util("Super","123")
+        val product1 = Util("Super","123")
+        val product2 = Util("Super","123")
+
+        val products: ArrayList<Util>? = null// Replace with your actual data
+        products?.add(product)
+        products?.add(product1)
+        products?.add(product2)
+        val adapter = products?.let { ProductAdapter(requireContext(), it) }
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+    }
+
 
     companion object {
         /**

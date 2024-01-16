@@ -136,7 +136,7 @@
     <fragment
         android:id="@+id/productFragment"
         android:name="com.balckliquid.blackliquid.ProductFragment"
-        android:label="fragment_product"
+        android:label="Add Product"
         tools:layout="@layout/fragment_product" >
         <action
             android:id="@+id/action_productFragment_to_FirstFragment"
