@@ -9,20 +9,6 @@
     android:rotationY="-1"
     tools:context=".ProductFragment">
 
-    <EditText
-        android:id="@+id/editLtProduct"
-        android:layout_width="0dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="Product"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/btnAddProdcut"
         android:layout_width="wrap_content"
@@ -33,19 +19,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editLtProduct" />
 
-    <ScrollView
-        android:layout_width="405dp"
-        android:layout_height="598dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/prorecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddProdcut">
+        app:layout_constraintTop_toBottomOf="@+id/btnAddProdcut"
+        tools:listitem="@layout/product_list" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/prorecyclerview"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            tools:listitem="@layout/product_list" />
-    </ScrollView>
+    <EditText
+        android:id="@+id/editLtProduct"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

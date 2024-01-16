@@ -43,16 +43,19 @@ class ProductFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val products = ArrayList<Util>()
+
         var recyclerView = view.findViewById<RecyclerView>(R.id.prorecyclerview)
         val product = Util("Super","123")
         val product1 = Util("Super","123")
         val product2 = Util("Super","123")
 
-        val products: ArrayList<Util>? = null// Replace with your actual data
+
+
         products?.add(product)
         products?.add(product1)
         products?.add(product2)
-        val adapter = products?.let { ProductAdapter(requireContext(), it) }
+        val adapter = ProductAdapter(requireContext(), products)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
     }
