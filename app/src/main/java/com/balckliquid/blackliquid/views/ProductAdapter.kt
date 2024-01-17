@@ -23,15 +23,16 @@ class ProductAdapter(private val context: Context, private val products: ArrayLi
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val product = products[position]
         holder.name?.text = product.product_name
+        holder.price?.text = product.product_id
         //holder..text = product.product_name
     }
 
-    override fun getItemCount(): Int = 0
+    override fun getItemCount(): Int = products.size
 
     inner class ViewHolder(itemView: View?): RecyclerView.ViewHolder(itemView!!) {
         //val textCourse = itemView?.findViewById<TextView?>(R.id.textCourse)
         val name = itemView?.findViewById<TextView?>(R.id.txtName)
-        //val price = itemView?.findViewById<TextView?>(R.id.txtPrice)
+        val price = itemView?.findViewById<TextView?>(R.id.txtPrice)
 
         init {
             itemView?.setOnClickListener {

@@ -46,15 +46,26 @@ class ProductFragment : Fragment() {
         val products = ArrayList<Util>()
 
         var recyclerView = view.findViewById<RecyclerView>(R.id.prorecyclerview)
-        val product = Util("Super","123")
-        val product1 = Util("Super","123")
-        val product2 = Util("Super","123")
+        val product = Util("Chibuku Super","123")
+        val product1 = Util("Super Maheu","123")
+        val product2 = Util("Baby powder","123")
+        val product3 = Util("Chibuku Super","123")
+        val product4 = Util("Super Maheu","123")
+        val product5 = Util("Baby powder","123")
+        val product6 = Util("Chibuku Super","123")
+        val product7 = Util("Super Maheu","123")
+        val product8 = Util("Baby powder","123")
 
 
 
         products?.add(product)
         products?.add(product1)
-        products?.add(product2)
+        products?.add(product3)
+        products?.add(product4)
+        products?.add(product5)
+        products?.add(product6)
+        products?.add(product7)
+        products?.add(product8)
         val adapter = ProductAdapter(requireContext(), products)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
