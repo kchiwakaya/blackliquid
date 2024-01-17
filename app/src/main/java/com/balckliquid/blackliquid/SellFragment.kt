@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.navigation.fragment.findNavController
@@ -42,7 +44,25 @@ class SellFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val currencies = arrayOf("USD","Zim Dollar(Bond)","Ecocash USD", "Ecocash RTGS","RTGS","Rand","Pounds","Euro")
+        val adapter = ArrayAdapter(context!!,android.R.layout.simple_spinner_item,currencies)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
+        val spinner = binding.spinner
+        spinner.adapter = adapter
+        var selectedCurrency:Array<String>
+
+        spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                 selectedCurrency = arrayOf(currencies[p2])
+                Toast.makeText(context,selectedCurrency.first().toString(),Toast.LENGTH_LONG).show()
+
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+        }
 
        binding.btnSale.setOnClickListener {
            val product = Product(binding.editProdName.text.toString(),"232","Chibuku",34.40,
