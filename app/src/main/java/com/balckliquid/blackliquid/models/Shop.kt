@@ -11,7 +11,9 @@ data class Shop(
 data class Util(
     val product_name: String,
     val product_id:String = UUID.randomUUID().toString()
-)
+){
+    constructor():this("")
+}
 
 data class Product(
     val name:String,

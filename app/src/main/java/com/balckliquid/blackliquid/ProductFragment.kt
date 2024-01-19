@@ -5,10 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.balckliquid.blackliquid.models.Util
 import com.balckliquid.blackliquid.views.ProductAdapter
+import com.balckliquid.blackliquid.databinding.FragmentProductBinding
+import com.balckliquid.blackliquid.databinding.FragmentSellBinding
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.toObject
+import com.google.firebase.ktx.Firebase
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +31,13 @@ class ProductFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var _binding: FragmentProductBinding? = null
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
+    val db = Firebase.firestore
+    val products = ArrayList<Util>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -37,38 +50,46 @@ class ProductFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_product, container, false)
+
+        _binding = FragmentProductBinding.inflate(inflater, container, false)
+        return binding.root
+
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val products = ArrayList<Util>()
 
+        loadProducts()
         var recyclerView = view.findViewById<RecyclerView>(R.id.prorecyclerview)
-        val product = Util("Chibuku Super","123")
-        val product1 = Util("Super Maheu","123")
-        val product2 = Util("Baby powder","123")
-        val product3 = Util("Chibuku Super","123")
-        val product4 = Util("Super Maheu","123")
-        val product5 = Util("Baby powder","123")
-        val product6 = Util("Chibuku Super","123")
-        val product7 = Util("Super Maheu","123")
-        val product8 = Util("Baby powder","123")
-
-
-
-        products?.add(product)
-        products?.add(product1)
-        products?.add(product3)
-        products?.add(product4)
-        products?.add(product5)
-        products?.add(product6)
-        products?.add(product7)
-        products?.add(product8)
         val adapter = ProductAdapter(requireContext(), products)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+
+        binding.btnAddProdcut.setOnClickListener{
+            val product = Util(binding.editLtProduct.text.toString())
+            db.collection("prods")
+                .add(product)
+                .addOnSuccessListener { documentReference ->
+                    Toast.makeText(activity,"Success", Toast.LENGTH_LONG).show()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(activity,"Failed", Toast.LENGTH_LONG).show()
+                }
+        }
+    }
+
+    private fun loadProducts() {
+        db.collection("prods")
+        .get()
+        .addOnSuccessListener { documents ->
+            for (document in documents){
+                val product = document.toObject<Util>()
+                if (product != null) {
+                    products.add(product)
+                }
+            }
+        }
     }
 
 
