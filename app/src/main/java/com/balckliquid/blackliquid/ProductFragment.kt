@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.balckliquid.blackliquid.models.Util
 import com.balckliquid.blackliquid.views.ProductAdapter
 import com.balckliquid.blackliquid.databinding.FragmentProductBinding
-import com.balckliquid.blackliquid.databinding.FragmentSellBinding
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.toObject
 import com.google.firebase.ktx.Firebase
@@ -64,7 +63,7 @@ class ProductFragment : Fragment() {
         val adapter = ProductAdapter(requireContext(), products)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
+        adapter.notifyDataSetChanged()
 
         binding.btnAddProdcut.setOnClickListener{
             val product = Util(binding.editLtProduct.text.toString())
