@@ -1,0 +1,18 @@
+```kotlin
+class Report {
+        fun totalSales(sales: List<Sale>): Double {
+            return sales.sumOf { it.unit_price * it.quantity }
+        }
+
+        fun totalInventory(products: List<Product>): Int {
+            return products.sumOf { it.quantity }
+        }
+
+        fun profit(sales: List<Sale>, losses: List<Loss>, products: List<Product>): Double {
+            val revenue = totalSales(sales)
+            val cost = products.sumOf { it.purchase_price * it.quantity }
+            val loss = losses.sumOf { it.unit_price * it.quantity }
+            return revenue - cost - loss
+        }
+    }
+```

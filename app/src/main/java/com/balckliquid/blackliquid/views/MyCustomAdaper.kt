@@ -7,7 +7,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.balckliquid.blackliquid.models.Util
 
-class MyCustomAdapter(context: Context, items: List<Util>) :
+class MyCustomAdapter(context: Context, items: ArrayList<Util>) :
     ArrayAdapter<Util>(context, android.R.layout.simple_list_item_1, items) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {

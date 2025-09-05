@@ -12,6 +12,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.balckliquid.blackliquid.databinding.FragmentAddProductBinding
 import com.balckliquid.blackliquid.databinding.FragmentProductBinding
+import com.balckliquid.blackliquid.views.MyCustomAdapter
 import com.google.firebase.firestore.toObject
 
 // TODO: Rename parameter arguments, choose names that match
@@ -52,22 +53,28 @@ class AddProductFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val products = loadProducts()
-        val adapter = ArrayAdapter(requireContext(), R.layout.simple_list_item_1, products)
+        val adapter = MyCustomAdapter(requireContext(),  products)
 
         val autoCompleteTextView = binding.txtProd
         autoCompleteTextView.threshold = 1
         autoCompleteTextView.setAdapter(adapter)
 
     }
-    private fun loadProducts(): ArrayList<String> {
-        val products = ArrayList<String>()
+    /*autoCompleteTextView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+        val selectedKey = adapter.getItem(position)?.key
+        // Use the selected key as needed
+    }*/
+
+
+    private fun loadProducts(): ArrayList<Util> {
+        val products = ArrayList<Util>()
         db.collection("prods")
             .get()
             .addOnSuccessListener { documents ->
                 for (document in documents) {
                     val product = document.toObject<Util>()
                     if (product != null) {
-                        products.add(product.product_name)
+                        products.add(product)
                     }
                 }
             }
